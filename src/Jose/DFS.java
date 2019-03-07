@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class BFS {
+public class DFS {
 
     public static void main(String[] args) {
         // write your code here
@@ -13,9 +13,12 @@ public class BFS {
         for (int i = 1; i < n; i++) {
             Grafo[i] = new ArrayList<>(n);
         }
+        //Rellenar grafo
+        List<Integer>[] recorridos = DFS(Grafo);
     }
 
-    public static List<Integer> DFS(List<Integer>[] grafo, int vertice) {
+
+    private static List<Integer> DFS(List<Integer>[] grafo, int vertice) {
         int n = grafo.length;
         ArrayList<Integer> salida = new ArrayList<>(n);
         boolean [] visitados = new boolean[n];
