@@ -8,7 +8,7 @@ public class BFS {
         // write your code here
         int n = 10;
         List<Integer>[] g = new List[n];
-        for (int i = 1; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             g[i] = new ArrayList<>(n);
         }
         g[1].add(2); g[2].add(1);
@@ -36,6 +36,7 @@ public class BFS {
         boolean [] visitados = new boolean[n];
         Queue<Integer> pila = new LinkedList<>();
         visitados[vertice] = true;
+        salida.add(vertice);
         pila.add(vertice);
         while(!pila.isEmpty()){
             int aux = pila.remove();
@@ -52,7 +53,7 @@ public class BFS {
 
     public static List<Integer>[] BFS(List<Integer>[] grafo) {
         List<Integer>[] salida = new List[grafo.length];
-        for (int i = 1; i < grafo.length; i++) {
+        for (int i = 0; i < grafo.length; i++) {
             salida[i] = BFS(grafo, i);
         }
         return salida;
