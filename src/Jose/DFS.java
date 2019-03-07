@@ -38,6 +38,7 @@ public class DFS {
         boolean [] visitados = new boolean[n];
         Stack<Integer> cola = new Stack<>();
         visitados[vertice] = true;
+        salida.add(vertice);
         cola.push(vertice);
         while(!cola.isEmpty()){
             int aux = cola.pop();
