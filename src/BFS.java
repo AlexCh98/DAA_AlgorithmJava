@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
-public class Main {
+public class BFS {
 
     public static void main(String[] args) {
         // write your code here
@@ -16,7 +17,17 @@ public class Main {
         int n = grafo.length;
         ArrayList<Integer> salida = new ArrayList<>(n);
         boolean [] visitados = new boolean[n];
-        
+        Stack<Integer> cola = new Stack<>();
+        visitados[vertice] = true;
+        cola.push(vertice);
+        while(!cola.isEmpty()){
+            int aux = cola.pop();
+            for(Integer ady: grafo[aux]){
+                if(!visitados[vertice]){
+                    visitados[vertice] = true;
+                }
+            }
+        }
         return salida;
     }
 
