@@ -1,6 +1,8 @@
+package Ivan;
+
 import java.util.Scanner;
 
-public class Main {
+public class holaMundo {
 
     public static void main(String[] args){
         Scanner reader = new Scanner(System.in);

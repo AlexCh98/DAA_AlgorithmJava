@@ -1,7 +1,9 @@
+package Ivan;
+
 import java.io.IOException;
 import java.util.*;
 
-public class Main {
+public class actividades {
 
     public static class actividad implements Comparable{
         int inicio;

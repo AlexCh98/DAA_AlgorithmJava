@@ -1,8 +1,8 @@
-package com.company;
+package Ivan;
 
 import java.util.*;
 
-public class Main {
+public class BFS {
 
 	public static List<Integer> breadthFirstSearch(List<Integer>[] g, int v) {
 		int n = g.length;

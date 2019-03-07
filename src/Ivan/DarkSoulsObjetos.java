@@ -1,8 +1,8 @@
-
+package Ivan;
 
 import java.util.*;
 
-public class Main {
+public class DarkSoulsObjetos {
 
     public static class Objeto {
         String nombre;
