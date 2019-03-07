@@ -1,3 +1,5 @@
+package Jose;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -23,8 +25,10 @@ public class BFS {
         while(!cola.isEmpty()){
             int aux = cola.pop();
             for(Integer ady: grafo[aux]){
-                if(!visitados[vertice]){
-                    visitados[vertice] = true;
+                if(!visitados[ady]){
+                    visitados[ady] = true;
+                    salida.add(ady);
+                    cola.push(ady);
                 }
             }
         }
