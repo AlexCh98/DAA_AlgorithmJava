@@ -42,7 +42,7 @@ public class DFS_iterativo {
         cola.push(vertice);
         while(!cola.isEmpty()){
             int aux = cola.pop();
-            for(Integer ady: grafo[aux]){
+            for(int ady: grafo[aux]){
                 if(!visitados[ady]){
                     visitados[ady] = true;
                     salida.add(ady);
