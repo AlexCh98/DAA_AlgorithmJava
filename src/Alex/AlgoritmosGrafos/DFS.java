@@ -1,4 +1,4 @@
-package Alex;
+package Alex.AlgoritmosGrafos;
 
 
 /* ############ RECORRIDO EN PROFUNDIDAD ##############

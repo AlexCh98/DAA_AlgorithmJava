@@ -1,10 +1,19 @@
-package Alex;
+package Alex.AlgoritmosGrafos;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/* ############ RECORRIDO EN ANCHURA ##############
+ *      BREATH-FIRST SEARCH
+ *   -- Visita todos los vértices a una distancia k antes de
+ *      descubrir el primer vértice a la distancia k+1.
+ *   -- De manera iterativa.
+ *   -- Se tiene que incluir una cola con los vértices visitados para evitar ciclos y
+ *      establecer el orden en la búsqueda
+ *
+ * */
 public class BFS {
 
     public static void main(String[] args) {

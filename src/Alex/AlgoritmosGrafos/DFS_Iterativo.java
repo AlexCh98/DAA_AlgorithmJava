@@ -1,4 +1,4 @@
-package Alex;
+package Alex.AlgoritmosGrafos;
 
 import java.util.*;
 
