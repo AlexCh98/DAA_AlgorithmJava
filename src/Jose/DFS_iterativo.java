@@ -4,17 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class DFS {
+public class DFS_iterativo {
 
     public static void main(String[] args) {
         // write your code here
         int n = 10;
-        List<Integer>[] Grafo = new List[n];
+        List<Integer>[] g = new List[n];
         for (int i = 1; i < n; i++) {
-            Grafo[i] = new ArrayList<>(n);
+            g[i] = new ArrayList<>(n);
         }
-        //Rellenar grafo
-        List<Integer>[] recorridos = DFS(Grafo);
+        g[1].add(2); g[2].add(1);
+        g[1].add(4); g[4].add(1);
+        g[1].add(8); g[8].add(1);
+        g[2].add(3); g[3].add(2);
+        g[2].add(4); g[4].add(2);
+        g[3].add(4); g[4].add(3);
+        g[3].add(5); g[5].add(3);
+        g[4].add(7); g[7].add(4);
+        g[5].add(6); g[6].add(5);
+        g[6].add(7); g[7].add(6);
+        g[7].add(9); g[9].add(7);
+        g[8].add(9); g[9].add(8);
+        List<Integer>[] recorridos = DFS(g);
+        for(List<Integer> list : recorridos){
+            System.out.println(list);
+        }
     }
 
 
@@ -24,10 +38,11 @@ public class DFS {
         boolean [] visitados = new boolean[n];
         Stack<Integer> cola = new Stack<>();
         visitados[vertice] = true;
+        salida.add(vertice);
         cola.push(vertice);
         while(!cola.isEmpty()){
             int aux = cola.pop();
-            for(Integer ady: grafo[aux]){
+            for(int ady: grafo[aux]){
                 if(!visitados[ady]){
                     visitados[ady] = true;
                     salida.add(ady);
