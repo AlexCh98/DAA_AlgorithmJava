@@ -1,6 +1,5 @@
 package Jose;
 
-import javax.print.attribute.HashAttributeSet;
 import java.util.*;
 
 public class Prim {
@@ -38,16 +37,13 @@ public class Prim {
     public static void main(String[] args) {
         int n = 7;
         int[][] matrizAdyacencia = new int[n + 1][n + 1];
-        Set<Arista> aristas = new HashSet<>();
         Scanner reader = new Scanner(System.in);
         for (int i = 0; i < 22; i++) {
             String[] linea = reader.nextLine().split(" ");
             int origen = Integer.parseInt(linea[0]);
             int destino = Integer.parseInt(linea[1]);
             int peso = Integer.parseInt(linea[2]);
-            Arista arista = new Arista(new int[]{origen, destino}, peso);
             matrizAdyacencia[origen][destino] = peso;
-            aristas.add(arista);
         }
         for (int i = 1; i < matrizAdyacencia.length; i++) {
             System.out.println(Arrays.toString(Arrays.copyOfRange(matrizAdyacencia[i], 1, matrizAdyacencia.length)));
@@ -58,11 +54,11 @@ public class Prim {
     private static List<Arista> prim(int[][] matrizAdaycencia) {
         List<Arista> solucion = new ArrayList<>();
         int n = matrizAdaycencia.length;
-        int verticeOrigen = randomWithRange(1, n - 1);
+        int verticeOrigen = (int) (Math.random() * (n - 1)) + 1;
         HashSet<Integer> vertices = new HashSet<>();
         PriorityQueue<Arista> cola = new PriorityQueue<>();
         vertices.add(verticeOrigen);
-        while (vertices.size() < n-1) {
+        while (vertices.size() < n - 1) {
             rellenarCola(cola, matrizAdaycencia, verticeOrigen, vertices);
             Arista mejorArista = cola.poll();
             assert mejorArista != null;
@@ -81,11 +77,5 @@ public class Prim {
                 cola.offer(new Arista(new int[]{verticeOrigen, i}, matrizAdaycencia[verticeOrigen][i]));
             }
         }
-    }
-
-    public static int randomWithRange(int min, int max) {
-        int range = (max - min) + 1;
-        return (int) (Math.random() * range) + min;
-
     }
 }
