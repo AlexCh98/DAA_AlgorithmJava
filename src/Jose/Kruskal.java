@@ -76,34 +76,36 @@ public class Kruskal {
         //kruskal(grafo);
         System.out.print(sb);
     }
-    public static List<Arista> kruskal(Grafo grafo){
+
+    public static List<Arista> kruskal(Grafo grafo) {
         int n = grafo.listaAdyacencia.length - 1;//numero de nodos
-        List<Arista> solucion = new ArrayList<>(n-1);//Una arista menos que el numero de nodos
+        List<Arista> solucion = new ArrayList<>(n - 1);//Una arista menos que el numero de nodos
         SortedSet<Arista> candidatos = new TreeSet<>(grafo.aristas);
         ArrayList<Set<Integer>> componentes = new ArrayList<>(n);
-        for(int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             Set<Integer> componente = new HashSet<>(n);
             componente.add(i);
             componentes.add(componente);
         }
         System.out.println(componentes);
-        while(solucion.size() != n-1 && !candidatos.isEmpty()){
+        while (solucion.size() != n - 1 && !candidatos.isEmpty()) {
             Arista mejorArista = candidatos.first();
             candidatos.remove(mejorArista);
             //System.out.println("Mejor Arista = " + mejorArista);
             //System.out.println("Componentes = " + componentes);
-            if(isFactible(mejorArista, componentes)){
+            if (isFactible(mejorArista, componentes)) {
                 solucion.add(mejorArista);
                 //System.out.println("Arista aceptada");
             }
 
         }
-        if(candidatos.isEmpty() && solucion.size() != n-1){
+        if (candidatos.isEmpty() && solucion.size() != n - 1) {
             System.out.println("Imposible resolver");
             return null;
         }
         return solucion;
     }
+
     /**
      * Este metodo comprueba si se puede añadir la arista mejor arista y
      * en caso afirmativo actualiza las componenres.
@@ -111,12 +113,12 @@ public class Kruskal {
     private static boolean isFactible(Arista mejorArista, ArrayList<Set<Integer>> componentes) {
         int nodo_1 = mejorArista.arista[0];
         int nodo_2 = mejorArista.arista[1];
-        for(Set<Integer> componente: componentes){
-            if(componente.contains(nodo_1) && componente.contains(nodo_2)){
+        for (Set<Integer> componente : componentes) {
+            if (componente.contains(nodo_1) && componente.contains(nodo_2)) {
                 return false;
-            }else if(componente.contains(nodo_1) && !componente.contains(nodo_2)){
+            } else if (componente.contains(nodo_1) && !componente.contains(nodo_2)) {
                 componente.add(nodo_2);
-            }else if(!componente.contains(nodo_1) && componente.contains(nodo_2)){
+            } else if (!componente.contains(nodo_1) && componente.contains(nodo_2)) {
                 componente.add(nodo_1);
             }
         }
