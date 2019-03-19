@@ -42,50 +42,8 @@ public class Kruskal {
     }
 
 
-    private static List<Arista> Kruskal(Grafo grafo, int n_nodos, int n_aristas) {
-        List<Arista> solucion = new ArrayList<>(n_nodos - 1);
-        SortedSet<Arista> aristas = new TreeSet<>(grafo.aristas);
-        ArrayList<Set<Integer>> componentes = new ArrayList<>(n_nodos);
-        for (int i = 1; i <= n_nodos; i++) {
-            Set<Integer> componente = new HashSet<>(n_nodos);
-            componente.add(i);
-            componentes.add(componente);
-            grafo.listaAdyacencia[i] = new ArrayList<>(n_nodos + 1);
-        }
-        while (solucion.size() < n_nodos - 1 && !aristas.isEmpty()) {
-            Arista arista = aristas.first();
-            int nodo_1 = arista.arista[0];
-            int nodo_2 = arista.arista[1];
-            if (comprobar(nodo_1, nodo_2, componentes)) {
-
-                solucion.add(arista);
-            }
-            aristas.remove(arista);
-            //System.out.println(solucion.size());
-        }
-        return solucion;
-    }
-
-    /**
-     * Este metodo comprueba si se puede añadir la arista [nodo_1, nodo_2] y
-     * en caso afirmativo actualiza las componenres.
-     */
-    private static boolean comprobar(int nodo_1, int nodo_2, ArrayList<Set<Integer>> componentes) {
-        for (Set<Integer> componente : componentes) {
-            if (componente.contains(nodo_1) && componente.contains(nodo_2)) {
-                return false;
-            } else if (componente.contains(nodo_1)) {
-                componente.add(nodo_2);
-            } else if (componente.contains(nodo_2)) {
-                componente.add(nodo_1);
-            }
-        }
-        return true;
-    }
-
-
     public static void main(String[] args) {
-        int n_nodos = 8;
+        int n_nodos = 7;
         int n_aristas = 15;
         Scanner reader = new Scanner(System.in);
         Grafo grafo = new Grafo();
@@ -114,13 +72,55 @@ public class Kruskal {
             sb.append(arista);
         }
         sb.append("\nSOLUCION: \n");
-        List<Arista> solucion = Kruskal(grafo, n_nodos, n_aristas);
-        int pesoTotal = 0;
-        for (Arista arista : solucion) {
-            sb.append(arista);
-            pesoTotal += arista.peso;
-        }
-        sb.append("Peso total: ").append(pesoTotal);
+        sb.append(kruskal(grafo));
+        //kruskal(grafo);
         System.out.print(sb);
     }
+    public static List<Arista> kruskal(Grafo grafo){
+        int n = grafo.listaAdyacencia.length - 1;//numero de nodos
+        List<Arista> solucion = new ArrayList<>(n-1);//Una arista menos que el numero de nodos
+        SortedSet<Arista> candidatos = new TreeSet<>(grafo.aristas);
+        ArrayList<Set<Integer>> componentes = new ArrayList<>(n);
+        for(int i = 1; i <= n; i++){
+            Set<Integer> componente = new HashSet<>(n);
+            componente.add(i);
+            componentes.add(componente);
+        }
+        System.out.println(componentes);
+        while(solucion.size() != n-1 && !candidatos.isEmpty()){
+            Arista mejorArista = candidatos.first();
+            candidatos.remove(mejorArista);
+            System.out.println("Mejor Arista = " + mejorArista);
+            System.out.println("Componentes = " + componentes);
+            if(isFactible(mejorArista, componentes)){
+                solucion.add(mejorArista);
+                System.out.println("Arista aceptada");
+            }
+
+        }
+        if(candidatos.isEmpty() && solucion.size() != n-1){
+            System.out.println("Imposible resolver");
+            return null;
+        }
+        return solucion;
+    }
+    /**
+     * Este metodo comprueba si se puede añadir la arista mejor arista y
+     * en caso afirmativo actualiza las componenres.
+     */
+    private static boolean isFactible(Arista mejorArista, ArrayList<Set<Integer>> componentes) {
+        int nodo_1 = mejorArista.arista[0];
+        int nodo_2 = mejorArista.arista[1];
+        for(Set<Integer> componente: componentes){
+            if(componente.contains(nodo_1) && componente.contains(nodo_2)){
+                return false;
+            }else if(componente.contains(nodo_1) && !componente.contains(nodo_2)){
+                componente.add(nodo_2);
+            }else if(!componente.contains(nodo_1) && componente.contains(nodo_2)){
+                componente.add(nodo_1);
+            }
+        }
+        return true;
+    }
 }
+
