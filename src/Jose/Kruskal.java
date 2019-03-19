@@ -90,11 +90,11 @@ public class Kruskal {
         while(solucion.size() != n-1 && !candidatos.isEmpty()){
             Arista mejorArista = candidatos.first();
             candidatos.remove(mejorArista);
-            System.out.println("Mejor Arista = " + mejorArista);
-            System.out.println("Componentes = " + componentes);
+            //System.out.println("Mejor Arista = " + mejorArista);
+            //System.out.println("Componentes = " + componentes);
             if(isFactible(mejorArista, componentes)){
                 solucion.add(mejorArista);
-                System.out.println("Arista aceptada");
+                //System.out.println("Arista aceptada");
             }
 
         }
