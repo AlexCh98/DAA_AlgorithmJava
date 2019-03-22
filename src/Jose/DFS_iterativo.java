@@ -36,17 +36,17 @@ public class DFS_iterativo {
         int n = grafo.length;
         ArrayList<Integer> salida = new ArrayList<>(n);
         boolean [] visitados = new boolean[n];
-        Stack<Integer> cola = new Stack<>();
+        Stack<Integer> pila = new Stack<>();
         visitados[vertice] = true;
         salida.add(vertice);
-        cola.push(vertice);
-        while(!cola.isEmpty()){
-            int aux = cola.pop();
+        pila.push(vertice);
+        while(!pila.isEmpty()){
+            int aux = pila.pop();
             for(int ady: grafo[aux]){
                 if(!visitados[ady]){
                     visitados[ady] = true;
                     salida.add(ady);
-                    cola.push(ady);
+                    pila.push(ady);
                 }
             }
         }
