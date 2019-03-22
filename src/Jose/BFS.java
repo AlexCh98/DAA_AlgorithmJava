@@ -34,17 +34,17 @@ public class BFS {
         int n = grafo.length;
         ArrayList<Integer> salida = new ArrayList<>(n);
         boolean [] visitados = new boolean[n];
-        Queue<Integer> pila = new LinkedList<>();
+        Queue<Integer> cola = new LinkedList<>();
         visitados[vertice] = true;
         salida.add(vertice);
-        pila.add(vertice);
-        while(!pila.isEmpty()){
-            int aux = pila.remove();
+        cola.add(vertice);
+        while(!cola.isEmpty()){
+            int aux = cola.remove();
             for(Integer ady: grafo[aux]){
                 if(!visitados[ady]){
                     visitados[ady] = true;
                     salida.add(ady);
-                    pila.add(ady);
+                    cola.add(ady);
                 }
             }
         }
