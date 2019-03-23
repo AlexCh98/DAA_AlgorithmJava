@@ -37,11 +37,10 @@ public class AlgoritmoMochilaAlex {
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (o == null || getClass() != o.getClass())
+                return false;
             Objeto objeto = (Objeto) o;
-            return peso == objeto.peso &&
-                    valor == objeto.valor &&
-                    nombre.equals(objeto.nombre);
+            return this.peso == objeto.peso && this.valor == objeto.valor && this.nombre.equals(objeto.nombre);
         }
 
         @Override
