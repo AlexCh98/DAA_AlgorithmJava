@@ -4,7 +4,7 @@ package Alex.AlgoritmosVoraces;
 
 public class Prim {
     public static class Vertice {
-        String nombre;
+        private String nombre;
         int numVertice;
 
         public Vertice(String nombre, int numVertice) {
@@ -34,20 +34,21 @@ public class Prim {
             return nombre.equals(n.nombre);
         }
     }
+
     public static class Grafo{
         public static int INFINITO = 0xFFFF;
         private int[][] matrizPesos;
-        private Vertice[] vertice;
+        private Vertice[] arrayVertices;
         private int numVertices;
 
         public Grafo(int[][] matrizPesos, Vertice[] vertice, int numVertice) {
             this.matrizPesos = matrizPesos;
-            this.vertice = vertice;
+            this.arrayVertices = vertice;
             this.numVertices = numVertice;
         }
         public Grafo(int num) {
             this.matrizPesos = new int[num][num];
-            this.vertice = new Vertice[num];
+            this.arrayVertices = new Vertice[num];
             for(int i=0;i<num;i++){
                 for(int j=0;j<num;j++){
                     matrizPesos[i][j] = INFINITO;
@@ -60,7 +61,7 @@ public class Prim {
             if(!esta){
                 Vertice v  = new Vertice(nom);
                 v.setNumVertice(numVertices);
-                vertice[numVertices++] = v;
+                arrayVertices[numVertices++] = v;
             }
         }
         /*Devuelve el peso del arco entre los nodos a y b*/
@@ -77,8 +78,8 @@ public class Prim {
         }
 
         /*Devuleve el array de vertices*/
-        public Vertice[] getVertice(){
-            return vertice;
+        public Vertice[] getArrayVertices(){
+            return arrayVertices;
         }
         /*Crea un nuevo arco*/
         public void nuevoArco(String a,String b, int peso){
@@ -93,7 +94,7 @@ public class Prim {
             boolean encontrado = false;
            int i = 0;
            while (i<numVertices && !encontrado){
-                encontrado = vertice[i].equals(v);
+                encontrado = arrayVertices[i].equals(v);
                 if(!encontrado){
                     i++;
                 }
@@ -121,29 +122,29 @@ public class Prim {
         }
 
         protected int arbolExpansionPrim(){
-            int longMin, menor, z;
-            int [] coste = new int[n];
-            int [] masCercano = new int[n];
+            int costeMin, menorArista, z;
+            int[] coste = new int[n];
+            int[] masCercano = new int[n];
             boolean[] visitado = new boolean[n];
             for(int i= 0;i<n;i++)
                 visitado[i] = false;
             visitado[0] = true; //Empiezo en el nodo 0;
-            longMin = 0;
+            costeMin = 0;
             /*Coste de las Aristas Nodo 0*/
             for(int i=1;i<n;i++){
                 coste[i] = pesos[0][i];
                 masCercano[i] = 0;
             }
             for(int i=1;i<n;i++){
-                menor = coste[1];
+                menorArista = coste[1];
                 z=1;
                 for(int j=2;j<n;j++){
-                    if(coste[j]<menor){
-                        menor = coste[j];
+                    if(coste[j]<menorArista){
+                        menorArista = coste[j];
                         z = j;
                     }
                 }
-                longMin += menor;
+                costeMin += menorArista;
                 System.out.println((++cont)+" Pasada: Vertice: "+ vertices[masCercano[z]].getNombre()+" -> "+"Vertice: "+vertices[z].getNombre()+" Peso: "+coste[z]);
                 visitado[z] = true;
                 coste[z] = Grafo.INFINITO;
@@ -155,7 +156,7 @@ public class Prim {
                     }
                 }
             }
-            return longMin;
+            return costeMin;
         }
 
 
@@ -209,11 +210,22 @@ public class Prim {
 
         System.out.println("Vertices del Grafo");
         for(int i = 0;i<numeroVertices;i++){
-            System.out.print(grafo.getVertice()[i].getNombre()+" ");
+            System.out.print(grafo.getArrayVertices()[i].getNombre()+" ");
         }
         System.out.println();
 
-        AlgoritmoPrim arbol = new AlgoritmoPrim(grafo, grafo.getVertice());
+        AlgoritmoPrim arbol = new AlgoritmoPrim(grafo, grafo.getArrayVertices());
         System.out.println("Costo del arbol minimo:" + arbol.arbolExpansionPrim());
     }
 }
+
+
+
+
+
+
+
+
+
+
+/*https://es.slideshare.net/angenio2/programacin-3-algoritmo-de-prim-y-de-kruskal*/
