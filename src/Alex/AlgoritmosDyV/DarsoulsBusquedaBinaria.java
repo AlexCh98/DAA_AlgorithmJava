@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package Alex.AlgoritmosDyV;
 import java.util.Scanner;
 
 /*LA BUSQUEDA BINARIA ES EL ALGORITMO MÁS RÁPIDO PARA UN ARRAY ORDENADO, SINO HABRÍA QUE ORDENARLO
