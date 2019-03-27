@@ -43,7 +43,7 @@ public class Mergesort {
             //Fisión
             int[] mitad1 = mergeSort(miArray, inicio, medio);
             int[] mitad2 = mergeSort(miArray, medio + 1, fin);
-            
+
             //Una vez se ha dividido comienza la fuuuuuuusiooón
             return fusionar(mitad1,mitad2);
         }
