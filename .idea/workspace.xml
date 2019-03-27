@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef6e3218-f488-41f9-a7c9-2648983109a4" name="Default Changelist" comment="Voraces y DyV">
-      <change afterPath="$PROJECT_DIR$/src/Jose/Ciclos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/ProblemaCambioMonedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/ProblemaCambioMonedas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/Ciclos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/Ciclos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/problemaBFS_LecturaPantalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/problemaBFS_LecturaPantalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Jose/Quicksort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jose/Quicksort.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,19 +19,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Jose/BFS.java">
+        <entry file="file://$PROJECT_DIR$/src/Jose/Quicksort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="48" lean-forward="true" selection-start-line="54" selection-start-column="56" selection-end-line="55" selection-end-column="48" />
+            <state relative-caret-position="90">
+              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/problemaBFS_LecturaPantalla.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/HelloWorld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/ProblemaCambioMonedas.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Jose/Ciclos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/Ciclos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Jose/Ciclos.java">
+        <entry file="file://$PROJECT_DIR$/src/Jose/Mediana_quickselect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="138">
+              <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="58" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -84,14 +133,20 @@
         <option value="$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/PrimWiki.java" />
         <option value="$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/Prim.java" />
         <option value="$PROJECT_DIR$/src/Jose/Ciclos.java" />
+        <option value="$PROJECT_DIR$/src/Jose/Quicksort.java" />
+        <option value="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/ProblemaCambioMonedas.java" />
+        <option value="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/Ciclos.java" />
+        <option value="$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/problemaBFS_LecturaPantalla.java" />
+        <option value="$PROJECT_DIR$/src/Jose/Mediana_quickselect.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="726" />
-    <option name="y" value="27" />
-    <option name="width" value="640" />
-    <option name="height" value="555" />
+    <option name="x" value="716" />
+    <option name="y" value="25" />
+    <option name="width" value="650" />
+    <option name="height" value="743" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -99,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -157,18 +211,32 @@
               <item name="DAA" type="b2602c69:ProjectViewProjectNode" />
               <item name="DAA" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Alex" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DAA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DAA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Alex" type="462c0819:PsiDirectoryNode" />
+              <item name="EjerciciosProblemasClase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DAA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DAA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Jose" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553333155576" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553710741479" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -199,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Ciclos">
+  <component name="RunManager" selected="Application.Quicksort">
     <configuration name="BFS (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Jose.BFS" />
       <module name="DAA" />
@@ -213,32 +281,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BFS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Alex.AlgoritmosGrafos.BFS" />
-      <module name="DAA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Alex.AlgoritmosVoraces.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Ciclos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ciclos" />
+      <option name="MAIN_CLASS_NAME" value="Jose.Ciclos" />
       <module name="DAA" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Prim" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Alex.AlgoritmosVoraces.Prim" />
+    <configuration name="Mediana_quickselect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Jose.Mediana_quickselect" />
       <module name="DAA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Alex.AlgoritmosVoraces.*" />
+          <option name="PATTERN" value="Jose.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -260,20 +315,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Quicksort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Jose.Quicksort" />
+      <module name="DAA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Jose.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.BFS" />
       <item itemvalue="Application.Prim1" />
-      <item itemvalue="Application.Prim" />
       <item itemvalue="Application.BFS (1)" />
       <item itemvalue="Application.Ciclos" />
+      <item itemvalue="Application.Quicksort" />
+      <item itemvalue="Application.Mediana_quickselect" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Quicksort" />
+        <item itemvalue="Application.Mediana_quickselect" />
         <item itemvalue="Application.Ciclos" />
         <item itemvalue="Application.BFS (1)" />
         <item itemvalue="Application.Prim1" />
-        <item itemvalue="Application.BFS" />
-        <item itemvalue="Application.Prim" />
       </list>
     </recent_temporary>
   </component>
@@ -289,6 +357,8 @@
       <updated>1551969489934</updated>
       <workItem from="1551969495243" duration="5013000" />
       <workItem from="1553328519996" duration="166000" />
+      <workItem from="1553536783385" duration="2616000" />
+      <workItem from="1553622381489" duration="1497000" />
     </task>
     <task id="LOCAL-00001" summary="Cambio Alex">
       <created>1552233592214</created>
@@ -301,7 +371,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25936000" />
+    <option name="totallyTimeSpent" value="34808000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -321,17 +391,17 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.26656026" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.2753392" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5010661" side_tool="true" visible="true" weight="0.32719395" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5019952" side_tool="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
-      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.4989339" weight="0.32719395" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.4989339" weight="0.32899022" />
-      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.4968017" weight="0.40628386" />
+      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.4989339" weight="0.3257329" />
+      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.4980048" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.4968017" weight="0.40553746" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49946696" visible="true" weight="0.267101" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49946696" weight="0.267101" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -441,7 +511,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Alex/AlgoritmosGrafos/BFS.java</url>
           <line>43</line>
-          <properties class="Alex.AlgoritmosGrafos.BFS">
+          <properties class="Alex.AlgoritmosGrafos.BFS" method="BFS">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="9" />
@@ -516,16 +586,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/waitingTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/waitingTime.java" />
     <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosGrafos/DFS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -555,13 +616,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/entradaPrim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/entradaPrim" />
     <entry file="file://$PROJECT_DIR$/src/Jose/Prim.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
@@ -578,9 +633,7 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/lang/Object.java" />
-    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/grafoPrim.JPG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/grafoPrim.JPG" />
     <entry file="file://$PROJECT_DIR$/src/Alex/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -595,13 +648,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/AlgoritmoKruskal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/AlgoritmoKruskal.java" />
     <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/AlgoritmoMochila.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -642,13 +689,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/Prim.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/Prim.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -663,10 +704,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Jose/Mergesort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="57" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/AlgoritmosVoraces/ProblemaCambioMonedas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Jose/Ciclos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/problemaBFS_LecturaPantalla.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Jose/Quicksort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/EjerciciosProblemasClase/Ciclos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Jose/Mediana_quickselect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="58" selection-end-column="22" />
         </state>
       </provider>
     </entry>

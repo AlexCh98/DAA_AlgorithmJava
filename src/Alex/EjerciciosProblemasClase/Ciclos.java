@@ -1,4 +1,4 @@
-package Jose;
+package Alex.EjerciciosProblemasClase;
 
 import java.util.*;
 

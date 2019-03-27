@@ -1,7 +1,9 @@
+package Alex.EjerciciosProblemasClase;
+
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+public class HelloWorld {
 
     public static void main(String[] args) throws IOException {
         int i;

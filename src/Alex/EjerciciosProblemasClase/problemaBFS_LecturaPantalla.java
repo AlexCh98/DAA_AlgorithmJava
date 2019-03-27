@@ -1,7 +1,9 @@
+package Alex.EjerciciosProblemasClase;
+
 import java.io.IOException;
 import java.util.*;
 
-public class problemaBFS {
+public class problemaBFS_LecturaPantalla {
     public static List<Integer> breadthFirstSearch(List<Integer>[] g, int v) {
         int n = g.length;
         List<Integer> traversal = new ArrayList<>(n);
