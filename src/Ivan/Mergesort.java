@@ -1,9 +1,9 @@
-package Alex.AlgoritmosDyV;
+package Ivan;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MergesortBueno {
+public class Mergesort {
 
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
