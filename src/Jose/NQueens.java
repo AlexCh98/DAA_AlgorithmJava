@@ -2,7 +2,7 @@ package Jose;
 
 public class NQueens {
     private static final int N = 5;//Numero de reinas a colocar en un tablero NxN
-    private static int numero_solucion = 1;
+    private static long numero_solucion = 1;
     public static void main(String[] args) {
         int[][] tablero = new int[N][N];
         resolverNQueen(tablero, 0);
