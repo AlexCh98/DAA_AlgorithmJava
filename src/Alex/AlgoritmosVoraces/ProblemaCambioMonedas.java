@@ -1,3 +1,5 @@
+package Alex.AlgoritmosVoraces;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -46,27 +48,27 @@ public class ProblemaCambioMonedas {
         for (int moneda : valores) {
             candidatos.add(moneda);
         }
-        int cambio_devuleto = 0;
-        while (!candidatos.isEmpty() && cambio_devuleto < cambio) {
+        int cambio_devuelto = 0;
+        while (!candidatos.isEmpty() && cambio_devuelto < cambio) {
             int mejorMoneda = candidatos.first();
             //System.out.println("Mejor moneda: " + mejorMoneda);
             candidatos.remove(mejorMoneda);
             int monedaTengo = monedas.get(mejorMoneda);
             //System.out.println("De la mejor moneda tengo: " + monedaTengo);
             //System.out.println("MonedaTengo > 0: " + (monedaTengo >0) + "\t (cambio - cambio_devuleto) >= mejorMoneda: " + ((cambio - cambio_devuleto) > mejorMoneda));
-            if (monedaTengo > 0 && (cambio - cambio_devuleto) >= mejorMoneda) {//Mientras la moneda sea factible
-                int numero_monedas = Math.min(monedaTengo, (cambio - cambio_devuleto) / mejorMoneda);
+            if (monedaTengo > 0 && (cambio - cambio_devuelto) >= mejorMoneda) {//Mientras la moneda sea factible
+                int numero_monedas = Math.min(monedaTengo, (cambio - cambio_devuelto) / mejorMoneda);
                 //System.out.println("Esta moneda es factible cojo " + numero_monedas);
                 cantidad_monedas += numero_monedas;
                 //System.out.println("Actualizo cantidad de monedas " + cantidad_monedas);
-                cambio_devuleto += numero_monedas * mejorMoneda;
+                cambio_devuelto += numero_monedas * mejorMoneda;
                 //System.out.println("Actualizo el cambio que llevo a " + cambio_devuleto);
             /*}else{
                 //System.out.println("Esta moneda no es factible");
             */
             }
         }
-        if (cambio_devuleto != cambio) return -1;
+        if (cambio_devuelto != cambio) return -1;
         return cantidad_monedas;
     }
 }
