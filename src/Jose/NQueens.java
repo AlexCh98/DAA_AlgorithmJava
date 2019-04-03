@@ -1,3 +1,5 @@
+package Jose;
+
 public class NQueens {
     private static final int N = 5;//Numero de reinas a colocar en un tablero NxN
     private static int numero_solucion = 1;
