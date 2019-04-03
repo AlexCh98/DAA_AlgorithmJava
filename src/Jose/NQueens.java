@@ -8,16 +8,16 @@ public class NQueens {
         resolverNQueen(tablero, 0);
     }
 
-    private static boolean esBuena(int[][] tablero, int row, int col) {
+    private static boolean esBuena(int[][] tablero, int fila, int col) {
 
         for (int i = 0; i < col; i++)
-            if (tablero[row][i] == 1)
+            if (tablero[fila][i] == 1)
                 return false;
-        for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
+        for (int i = fila, j = col; i >= 0 && j >= 0; i--, j--)
             if (tablero[i][j] == 1)
                 return false;
 
-        for (int i = row, j = col; j >= 0 && i < N; i++, j--)
+        for (int i = fila, j = col; j >= 0 && i < N; i++, j--)
             if (tablero[i][j] == 1)
                 return false;
         return true;
