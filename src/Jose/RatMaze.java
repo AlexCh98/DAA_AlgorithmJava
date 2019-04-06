@@ -1,4 +1,4 @@
-package Jose;
+
 
 public class RatMaze {
     private static final int TAMANO_LABERINTO_X = 100;

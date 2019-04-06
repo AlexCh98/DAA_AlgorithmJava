@@ -1,5 +1,3 @@
-package Jose;
-
 import java.util.Arrays;
 
 public class KnightTour {
