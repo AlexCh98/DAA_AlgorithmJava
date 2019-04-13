@@ -1,4 +1,5 @@
-import java.util.Arrays;
+package Ivan.HechasPorMi.DivideYVenceras;
+
 import java.util.Scanner;
 
 public class DSBusquedaBinaria {

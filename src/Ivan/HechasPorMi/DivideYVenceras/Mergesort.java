@@ -1,4 +1,4 @@
-package Ivan;
+package Ivan.HechasPorMi.DivideYVenceras;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,10 +1,10 @@
-package poo;
+package Dani;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class DarkSouls {
+public class DarkSoulsBB {
 
     public static void main(String[] args) throws IOException{
 	// write your code here

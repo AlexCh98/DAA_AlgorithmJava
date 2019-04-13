@@ -1,4 +1,4 @@
-package poo;
+package Dani;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
-public class Main {
+public class activities {
 
     public static void main(String[] args) {
 	// write your code here

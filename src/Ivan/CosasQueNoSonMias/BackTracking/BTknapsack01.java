@@ -29,16 +29,16 @@ public class BTknapsack01 {
     if (bestSol.getValue() < sol.getValue() && sol.isSolution()) {
     	bestSol.copySol(sol);//Si la solucion es factible
     }
-    if (ei == data.size()) {//Si estamos en una hoja...
+    //if (ei == data.size()) {//Si estamos en una hoja...
     	return;//No tenemos mas objetos.
 	}
     
-	if(sol.isCandidate(ei)) {
-		sol.addElement(ei);
-		knapsackRec(ei + 1);
-		sol.removeElement(ei);
+	//if(sol.isCandidate(ei)) {
+		//sol.addElement(ei);
+		//knapsackRec(ei + 1);
+		//.removeElement(ei);
 	}
-	knapsackRec(ei + 1);
+	//knapsackRec(ei + 1);
     
-  }
-}
+  //}
+//}

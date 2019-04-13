@@ -1,4 +1,4 @@
-package Ivan;
+package Ivan.HechasPorMi.BackTracking;
 
 public class Laberinto {
     public static void laberinto (int [][] tablero, int r, int c,int k) {

@@ -1,12 +1,12 @@
-package Ivan;
+package Ivan.HechasPorMi.DivideYVenceras;
 
 import java.util.Scanner;
 
 public class Triminos {
     private static int [][] tablero;
     private static int color=2;
-    public Triminos(int tamaño,int inif, int finf, int inic,
-                            int finc , int x, int y){
+    public Triminos(int tamaño, int inif, int finf, int inic,
+                    int finc , int x, int y){
         if(((Math.pow((tamaño), 2))-1)%3==0){
             tablero=new int[tamaño][tamaño];
             // Ponemos en el punto x, y la casilla ocupada.
@@ -118,14 +118,28 @@ public class Triminos {
     }
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Introduzca una potencia de 2");
-        int tamaño = scanner.nextInt();
-        int finf=tamaño-1;
-        int x=5;
-        int y=6;
-        Triminos trimino=new Triminos(tamaño,0,finf,0,finf,x,y);
-        trimino.rellenar(tamaño,0,finf,0,finf,x,y);
-        trimino.print();
+        //System.out.println("Introduzca una potencia de 2");
+        //int tamaño = scanner.nextInt();
+        int numerocasos=15;
+        for (int i = 1; i <=numerocasos ; i++) {
+            int tamaño =(int) Math.pow(2,i);
+            int finf=tamaño-1;
+            int x=(int) (Math.random()*tamaño);;
+            int y=(int) (Math.random()*tamaño);;
+            Triminos trimino=new Triminos(tamaño,0,finf,0,finf,x,y);
+            long startTime = System.nanoTime();
+            trimino.rellenar(tamaño,0,finf,0,finf,x,y);
+            long endTime = System.nanoTime() - startTime;
+            System.out.println(tamaño);
+            System.out.println(endTime);
+
+        }
+        //int finf=tamaño-1;
+        //int x=(int) (Math.random()*tamaño);;
+        //int y=(int) (Math.random()*tamaño);;
+        //Triminos trimino=new Triminos(tamaño,0,finf,0,finf,x,y);
+        //trimino.rellenar(tamaño,0,finf,0,finf,x,y);
+        //trimino.print();
 
     }
 

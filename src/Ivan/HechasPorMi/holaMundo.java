@@ -1,4 +1,4 @@
-package Ivan;
+package Ivan.HechasPorMi;
 
 import java.util.Scanner;
 

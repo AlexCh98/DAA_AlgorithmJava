@@ -1,8 +1,8 @@
-package poo;
+package Dani;
 
 import java.util.*;
 
-public class Main {
+public class misRecorridos {
 
     public static void main(String[] args) {
 	// write your code here
