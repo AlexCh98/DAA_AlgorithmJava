@@ -24,7 +24,7 @@ public class Sudoku {
             cuadrantes[i/3][i%3] = new HashSet<>(TAM_SUDOKU);
         }
 
-        //FileReader f = new FileReader("entrada");
+        //FileReader f = new FileReader("entrada.txt");
         Scanner scan = new Scanner(System.in);
 
         //Rellenamos
@@ -40,57 +40,75 @@ public class Sudoku {
             }
         }
 
+        List<int[][]> soluciones = new ArrayList<>();
         //Backtracking
-        solucionarSudoku(0,0,filas,columnas,cuadrantes,sudoku);
+        solucionarSudoku(0,0,filas,columnas,cuadrantes,sudoku, soluciones);
+
+        if(soluciones.size() == 0){
+            System.out.println("imposible");
+        }else if(soluciones.size() == 1){
+            imprimirSudoku(soluciones.get(0));
+        }else{
+            System.out.println("casi sudoku");
+        }
     }
 
-    public static void solucionarSudoku(int fila, int columna, Set<Integer>[] filas,Set<Integer>[] columnas ,Set<Integer>[][] cuadrantes, int[][] sudoku){
-        if(esSolucion(filas)){
-            imprimirSudoku(sudoku);
+    public static void solucionarSudoku(int fila, int columna, Set<Integer>[] filas,Set<Integer>[] columnas ,Set<Integer>[][] cuadrantes, int[][] sudoku, List<int[][]> soluciones){
+        if(soluciones.size() <= 1) {
 
-        }else{
-            //Si la casilla en la que estamos ya está rellenada (viene dada desde el principio)
-            if(sudoku[fila][columna] != 0){
-
-                //Pasamos a la siguiente directamente
-                if(columna == TAM_SUDOKU-1){
-                    solucionarSudoku(fila+1, 0, filas, columnas, cuadrantes, sudoku);
-                }else{
-                    solucionarSudoku(fila, columna+1, filas, columnas, cuadrantes, sudoku);
-                }
-
-                //La casilla está vacía
-            }else{
-                //Probamos a rellenar esta casilla
-                for(int i=1; i<=TAM_SUDOKU; i++){
-                    //Miramos si el número que queremos meter es factible
-                    if(esFactible(i, filas[fila], columnas[columna], cuadrantes[fila/3][columna/3])){
-
-                        //Cambiamos el valor de la casilla y añadimos a las colecciones el valor
-                        sudoku[fila][columna] = i;
-                        filas[fila].add(i);
-                        columnas[columna].add(i);
-                        cuadrantes[fila/3][columna/3].add(i);
-
-                        //Siguiente casilla
-                        if(columna == TAM_SUDOKU-1){
-                            solucionarSudoku(fila+1, 0, filas, columnas, cuadrantes, sudoku);
-                        }else{
-                            solucionarSudoku(fila, columna+1, filas, columnas, cuadrantes, sudoku);
-                        }
-
-                        //Quitamos el valor
-                        filas[fila].remove(i);
-                        columnas[columna].remove(i);
-                        cuadrantes[fila/3][columna/3].remove(i);
+            if (esSolucion(filas)) {
+                int[][] copia = new int[TAM_SUDOKU][TAM_SUDOKU];
+                for(int i=0; i<TAM_SUDOKU; i++){
+                    for(int j=0; j<TAM_SUDOKU; j++){
+                        copia[i][j] = sudoku[i][j];
                     }
                 }
+                soluciones.add(copia);
 
-                //Restauramos el valor
-                sudoku[fila][columna] = 0;
+            } else {
+
+                //Si la casilla en la que estamos ya está rellenada (viene dada desde el principio)
+                if (sudoku[fila][columna] != 0) {
+
+                    //Pasamos a la siguiente directamente
+                    if (columna == TAM_SUDOKU - 1) {
+                        solucionarSudoku(fila + 1, 0, filas, columnas, cuadrantes, sudoku, soluciones);
+                    } else {
+                        solucionarSudoku(fila, columna + 1, filas, columnas, cuadrantes, sudoku, soluciones);
+                    }
+
+                    //La casilla está vacía
+                } else {
+                    //Probamos a rellenar esta casilla
+                    for (int i = 1; i <= TAM_SUDOKU; i++) {
+                        //Miramos si el número que queremos meter es factible
+                        if (esFactible(i, filas[fila], columnas[columna], cuadrantes[fila / 3][columna / 3])) {
+
+                            //Cambiamos el valor de la casilla y añadimos a las colecciones el valor
+                            sudoku[fila][columna] = i;
+                            filas[fila].add(i);
+                            columnas[columna].add(i);
+                            cuadrantes[fila / 3][columna / 3].add(i);
+
+                            //Siguiente casilla
+                            if (columna == TAM_SUDOKU - 1) {
+                                solucionarSudoku(fila + 1, 0, filas, columnas, cuadrantes, sudoku, soluciones);
+                            } else {
+                                solucionarSudoku(fila, columna + 1, filas, columnas, cuadrantes, sudoku, soluciones);
+                            }
+
+                            //Quitamos el valor
+                            filas[fila].remove(i);
+                            columnas[columna].remove(i);
+                            cuadrantes[fila / 3][columna / 3].remove(i);
+                        }
+                    }
+
+                    //Restauramos el valor
+                    sudoku[fila][columna] = 0;
+                }
             }
         }
-
     }
 
     public static boolean esFactible(int n, Set<Integer> fila,Set<Integer> columna,Set<Integer> cuadrante){
@@ -114,5 +132,6 @@ public class Sudoku {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }
