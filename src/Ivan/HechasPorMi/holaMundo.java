@@ -10,6 +10,9 @@ public class holaMundo {
         for(int i = 0; i < numero; i++){
             System.out.println("Hello World!");
         }
+        if (numero<0){
+            System.out.println("vete a la mierda");
+        }
 
     }
 }
