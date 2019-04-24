@@ -114,22 +114,6 @@ public class SemiSudoku {
         }
         return true;
     }
-    /*public static void imprimirSudoku(int[][] sudoku) {
-        for (int i = 0; i < 9; i++) {
-            if (i % 3 == 0 && i != 0) {
-                for (int j = 0; j < 9 * 3 + (3- 1); j++) {
-                    System.out.print("-");
-                }
-                System.out.println();
-            }
-            for (int j = 0; j < 9; j++) {
-                if (j % 3 == 0 && j != 0) System.out.print("|");
-                System.out.print(" " + (sudoku[i][j] == 0 ? "*": sudoku[i][j]) + " ");
-            }
-            System.out.println();
-        }
-    }*/
-
 }
 
 

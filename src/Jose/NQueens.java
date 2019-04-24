@@ -12,7 +12,7 @@ public class NQueens {
             for (int i = 0; i < N; i++) {
                 if (isFeasible(board, i, col)) {
                     board[i][col] = 1;
-                    if(SolveNQueensBT(board, col++)){
+                    if(SolveNQueensBT(board, ++col)){
                         return true;
                     }
                     board[i][col] = 0;
