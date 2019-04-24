@@ -42,7 +42,7 @@ public class Sudoku {
 
         List<int[][]> soluciones = new ArrayList<>();
         //Backtracking
-        solucionarSudoku(0,0,filas,columnas,cuadrantes,sudoku, soluciones);
+        solucionarSudoku(0,0,filas, columnas, cuadrantes, sudoku, soluciones);
 
         if(soluciones.size() == 0){
             System.out.println("imposible");
