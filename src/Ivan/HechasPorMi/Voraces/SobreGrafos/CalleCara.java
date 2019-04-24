@@ -1,4 +1,4 @@
-package Ivan.HechasPorMi.Voraces;
+package Ivan.HechasPorMi.Voraces.SobreGrafos;
 
 import java.util.*;
 

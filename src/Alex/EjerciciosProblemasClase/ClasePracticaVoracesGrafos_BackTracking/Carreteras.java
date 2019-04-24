@@ -67,7 +67,6 @@ public class Carreteras {
     private static List<Carretera> Prim(List[] listadoCarreteras) {
         boolean[] visitado = new boolean[listadoCarreteras.length];
         List<Carretera> isla = new ArrayList<>();
-
         for(int i = 0; i < listadoCarreteras.length;i++){
             if(!visitado[i]){
                 islas++;
@@ -87,15 +86,5 @@ public class Carreteras {
             }
         }
         return isla;
-
     }
-
-    private static void rellenarCola(PriorityQueue<Carretera> cola, int[][] matrizAdyacencia, int verticeOrigen, HashSet<Integer> vertices) {
-        for (int i = 1; i < matrizAdyacencia[verticeOrigen].length; i++) {
-            if (matrizAdyacencia[verticeOrigen][i] > 0 && !vertices.contains(i)) {
-                cola.offer(new Carretera(verticeOrigen, i, matrizAdyacencia[verticeOrigen][i]));
-            }
-        }
-    }
-
 }
