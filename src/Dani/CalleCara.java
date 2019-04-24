@@ -104,13 +104,12 @@ public class CalleCara {
 
         List<Arista> isla = new ArrayList<>();
 
-        //Para llevar un seguimiento de en las que hemos estado
-
         //Bucle voraz
         for(int i=0; i<plano.length; i++){
             if(!visitados[i]){
                 //Estamos en una nueva isla
                 islas++;
+
                 //Creamos una nueva cola de prioridad para guardar las aristas
                 PriorityQueue<Arista> cola = new PriorityQueue<>();
                 //Añadimos las aristas que tiene el nodo
