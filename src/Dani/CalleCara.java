@@ -10,6 +10,8 @@ import java.util.*;
 public class CalleCara {
 
     public static long coste;
+    public static long carreteras;
+    public static int islas;
 
     public static class Arista implements Comparable{
         public int inicio;
@@ -54,25 +56,26 @@ public class CalleCara {
 
     public static void main(String[] args) throws IOException{
 
-        FileReader f = new FileReader("entrada.txt");
+        //FileReader f = new FileReader("entrada.txt");
         InputStreamReader in = new InputStreamReader(System.in);
-        BufferedReader input = new BufferedReader(f);
+        BufferedReader input = new BufferedReader(in);
 
         String linea = input.readLine();
         while(!linea.equals("0")){
 
             coste = 0;
+            islas = 0;
+            carreteras = 0;
 
+            //RELLENAR DATOS
             int numCiudades = Integer.parseInt(linea);
             linea = input.readLine();
             long numCarreteras = Long.parseLong(linea);
 
             List[] plano = new List[numCiudades];
-            Set<Integer> nodosNoVisitados = new HashSet<>();
 
             for(int i=0; i<numCiudades; i++){
                 plano[i] = new ArrayList();
-                nodosNoVisitados.add(i);
             }
 
             for(int i=0; i<numCarreteras; i++){
@@ -86,24 +89,8 @@ public class CalleCara {
                 plano[destino].add(new Arista(destino, inicio, precio));
             }
 
-            int islas = 0;
-            int carreteras = 0;
-
-            while(!nodosNoVisitados.isEmpty()){
-                Iterator it = nodosNoVisitados.iterator();
-                int ciudad = (int) it.next();
-                islas++;
-
-                nodosNoVisitados.remove(ciudad);
-
-                List<Arista> isla = primIslas(ciudad, plano, nodosNoVisitados);
-                carreteras += isla.size();
-
-                /*for(Arista i: isla){
-                    coste+=i.peso;
-                }*/
-            }
-
+            //FIN RELLENAR DATOS
+            primIslas(plano);
             System.out.println(islas +" "+carreteras+" "+ coste);
             System.out.println("---");
 
@@ -111,35 +98,57 @@ public class CalleCara {
         }
     }
 
-    public static List<Arista> primIslas(int ciudad, List[] plano, Set<Integer> nodos){
+    public static List<Arista> primIslas(List[] plano){
+
+        boolean[] visitados = new boolean[plano.length];
 
         List<Arista> isla = new ArrayList<>();
 
-        PriorityQueue<Arista> cola = new PriorityQueue<>();
-        cola.addAll(plano[ciudad]);
-
         //Para llevar un seguimiento de en las que hemos estado
-        Set<Integer> visitados = new HashSet<>();
-        visitados.add(ciudad);
 
-        //Empieza el bucle voraz
-        while(!cola.isEmpty()){
-            //Cogemos la mejor
-            Arista carretera = getBestCarretera(cola);
-            //Si se puede meter
-            if(esFactible(carretera, visitados)){
-                coste += carretera.peso;
-                isla.add(carretera);
+        //Bucle voraz
+        for(int i=0; i<plano.length; i++){
+            if(!visitados[i]){
+                //Estamos en una nueva isla
+                islas++;
+                //Creamos una nueva cola de prioridad para guardar las aristas
+                PriorityQueue<Arista> cola = new PriorityQueue<>();
+                //Añadimos las aristas que tiene el nodo
+                cola.addAll(plano[i]);
 
-                cola.addAll(plano[carretera.fin]);
+                //Lo dejamos como visitado
+                visitados[i] = true;
 
-                visitados.add(carretera.fin);
-                nodos.remove(carretera.fin);
+                //Empieza el bucle voraz
+                while(!cola.isEmpty()){
+                    //System.out.println("Info: " +islas +" "+carreteras+" "+ coste);
+
+                    //Cogemos la mejor
+                    Arista carretera = getBestCarretera(cola);
+                    /*System.out.println("Arista: "+carretera.aString());
+                    System.out.println();*/
+
+                    //Si se puede meter
+                    if(esFactible(carretera, visitados)){
+
+                        //Actualizamos costes y número de carreteras
+                        coste += carretera.peso;
+                        carreteras+= 1;
+
+                        //Guardo en la isla
+                        isla.add(carretera);
+
+                        //Añadimos aristas del nodo
+                        cola.addAll(plano[carretera.fin]);
+
+                        //Ponemos como visitado el nodo destino de la arista
+                        visitados[carretera.fin] = true;
+                    }
+                    //cola.remove(carretera);
+                }
             }
-
-            cola.remove(carretera);
-
         }
+
 
         return isla;
     }
@@ -149,10 +158,10 @@ public class CalleCara {
     }
 
 
-    public static boolean esFactible(Arista ar, Set<Integer> conjunto){
+    public static boolean esFactible(Arista ar, boolean[] conjunto){
         //En este caso el conjunto es el de no visitados así que tengo que ver que haga ciclo con ese conjunto
 
         //Si solo tiene uno de los extremos en el conjunto
-        return !conjunto.contains(ar.fin);
+        return !conjunto[ar.fin];
     }
 }
