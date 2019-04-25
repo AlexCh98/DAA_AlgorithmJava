@@ -65,7 +65,6 @@ public class SemiSudoku {
                         sudoku[fila][columna] = 0;
                     }
                 }
-
             }
         }return false;
     }

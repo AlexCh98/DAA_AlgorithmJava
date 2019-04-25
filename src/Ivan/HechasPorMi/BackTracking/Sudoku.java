@@ -15,15 +15,6 @@ public class Sudoku {
         print(sudoku);
     }
 
-    public static boolean lleno(int[][] sudoku) {
-        for (int i = 0; i < 9; i++)
-            for (int j = 0; j < 9; j++)
-                if (sudoku[i][j] == 0) {
-                return false;
-            }
-        return true;
-    }
-
     public static boolean solucionar(int[][] sudoku) {
         int fila = -1, columna = -1;
         boolean vacio = false;
