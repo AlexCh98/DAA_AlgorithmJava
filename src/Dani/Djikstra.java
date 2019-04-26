@@ -102,7 +102,7 @@ public class Djikstra {
 
     public static void actualizarDistancias(int mejorNodo, int[] solucion, int[][] grafo, Set<Integer> nodosNoSeleccionados){
 
-        int distanciaANodo = solucion[mejorNodo]; //Guardo la distancia al mejorNodo para sumarlo a la distancia de este a sus adyacentes
+        int distanciaANodo = solucion[mejorNodo]; //Guardo la distancia al mejorNodo para sumar la distancia de este a sus adyacentes
 
         for(int n: nodosNoSeleccionados){
             if(solucion[n] > distanciaANodo+grafo[mejorNodo][n]){
