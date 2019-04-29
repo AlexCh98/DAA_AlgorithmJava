@@ -9,7 +9,7 @@ public class EXAM {
 
     public static void main(String[] args) throws IOException {
 
-        //FileReader f = new FileReader("entrada.txt");
+        // FileReader f = new FileReader("entrada.txt");
         Scanner scan = new Scanner(System.in);
 
         int alumnos = scan.nextInt();
@@ -32,7 +32,9 @@ public class EXAM {
         int[] colocados = new int[alumnos];
         Arrays.fill(colocados,-1);
 
-        if(coloca(grafo,tipos,colocados,0, 0)){
+        boolean[] visitados = new boolean[alumnos];
+
+        if(coloca(grafo,tipos,colocados,0)){
             System.out.println("OK");
         }else{
             System.out.println("NO HAY SUFICIENTE");
@@ -42,7 +44,8 @@ public class EXAM {
 
     //La idea es hacer un recorrido en profundidad rellenando los colores de cada nodo
 
-    public static boolean coloca(List[] grafo, int tipos, int[] colocados, int nodo, int k){
+    public static boolean coloca(List[] grafo, int tipos, int[] colocados, int k){
+
 
         //Compruebo que todos tengan un examen
         if(estanColocados(colocados)){
@@ -53,25 +56,17 @@ public class EXAM {
 
             //Pruebo a poner los distintos examenes en este nodo
             while (i < tipos && !suficientes) {
-
+                //System.out.println("Nodo " + k + ", Tipo " + i);
                 //SI los adyacentes no son del mismo tipo
-                if (esFactible(i, nodo, grafo, colocados)) {
-                    colocados[nodo] = i;
-
-                    Iterator it = grafo[nodo].iterator();
-
-                    //Recorro en profundidad
-                    while (!it.hasNext() && !suficientes) {
-                        int sig = (int) it.next();
-                        suficientes = coloca(grafo,tipos,colocados,sig,k+1);
-                    }
+                if (esFactible(i, k, grafo, colocados)) {
+                    colocados[k] = i;
+                    suficientes = coloca(grafo, tipos, colocados, k+1);
                 }
 
                 //i++ para probar con el siguiente tipo de examen en este nodo
                 i++;
-                //Borro el nodo
-                colocados[nodo] = -1;
             }
+            colocados[k] = -1;
             return suficientes;
         }
 
