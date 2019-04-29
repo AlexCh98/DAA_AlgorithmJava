@@ -106,6 +106,7 @@ public class AsignarActividades {
 
         public boolean esSolucion(){return sigAgente==costes.length; }
 
+
         public int getCost() {
             return cost;
         }
