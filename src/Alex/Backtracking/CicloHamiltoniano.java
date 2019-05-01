@@ -25,6 +25,21 @@ public class CicloHamiltoniano {
         System.out.println();
     }
 
+    /*Backtracking es un algoritmo de fuerza bruta donde se puede tener varias combinaciones. Hay varias llamadas recursivas en el else (a veces no sucede si la llamada recursiva está dentro del for).
+    * Estructura Backtracking:
+    * if(casoBase())    //He llegado al final
+    *       //Comprobar si la solución es factible - válida - la acumulo(guardo)...
+    * else for()    //Casos posibles
+    *       if(es factible)
+    *           actualizar()    //Incrementas el numero de planetas y lo marcas como visitado
+    *           llamadaRecursiva
+    *           deshacer()      //Restas el planeta y lo marcas como no visitado
+    *
+    *
+    *
+    *   Si tuvieses un ciclo hamiltoniano con coste, habría que ir sumando los costes y cuando llegas al caso base, sumarlo.
+    * */
+
     public static void hamiltonian(List<Integer>[] grafo, int[] solution, int k) {
         List<Integer> adyacentes = new ArrayList<>(grafo[solution[k-1]]);
         while (!adyacentes.isEmpty()) {
