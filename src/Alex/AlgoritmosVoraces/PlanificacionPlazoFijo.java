@@ -1,3 +1,5 @@
+package Alex.AlgoritmosVoraces;
+
 import java.util.*;
 
 /*  ####PLANIFICACIÓN PLAZO FIJO####

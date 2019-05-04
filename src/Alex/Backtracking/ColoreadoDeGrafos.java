@@ -44,6 +44,6 @@ public class ColoreadoDeGrafos {
         grafo[0].add(3); grafo[3].add(0);
         grafo[2].add(3); grafo[3].add(2);
         //Grafo, nodo origen, numeroColores, arrayColores
-        color(grafo, 0, 3, new int[4]);
+        color(grafo, 0, 10, new int[4]);
     }
 }

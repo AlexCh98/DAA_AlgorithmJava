@@ -15,7 +15,7 @@ public class LaberintoCorto {
                 laberinto[i][j]= scaner.nextInt();
             }
         }
-        ArrayList<long [][]> soluciones=new ArrayList<>();
+        ArrayList<long [][]> soluciones = new ArrayList<>();
         resolverlaberinto(tam,laberinto,0,0,1,soluciones);
         if (soluciones.size()==0){
             System.out.println("SIN SOLUCION");

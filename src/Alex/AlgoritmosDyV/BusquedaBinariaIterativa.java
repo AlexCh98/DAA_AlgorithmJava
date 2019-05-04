@@ -4,7 +4,7 @@ import java.util.Scanner;
 /*LA BUSQUEDA BINARIA ES EL ALGORITMO MÁS RÁPIDO PARA UN ARRAY ORDENADO, SINO HABRÍA QUE ORDENARLO
 A LA ANTIGUA*/
 
-public class DarsoulsBusquedaBinaria {
+public class BusquedaBinariaIterativa {
 
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
@@ -36,7 +36,6 @@ public class DarsoulsBusquedaBinaria {
     }
 
    public static int busquedaBinaria(int[] valores, int valorBuscado) {
-        int encontrado = -1;
         int primero = 0;
         int ultimo = valores.length - 1;
         if(valorBuscado < valores[0]){
@@ -45,17 +44,12 @@ public class DarsoulsBusquedaBinaria {
             return ultimo;
         }else{
             while ((primero <= ultimo)) {
-
                 int medio = (primero + ultimo) / 2;
                 if (valores[medio] == valorBuscado) {
-
                     return medio;
                 } else if (valores[medio] < valorBuscado) {
-
                     primero = medio + 1;
-
                 } else {
-
                     ultimo = medio - 1;
                 }
             }
@@ -63,22 +57,6 @@ public class DarsoulsBusquedaBinaria {
         }
    }
 
-
-   /* public static int[] partida(int[] vec,int nivel){
-        int i=0;
-        int contador = 0;
-        int puntos = 0;
-        while (i<vec.length){
-            if(nivel>=vec[i]){
-                puntos+=vec[i];
-                contador++;
-            }else{
-                i=vec.length;
-            }
-            i++;
-        }
-        return new int[]{contador,puntos};
-    }*/
 
 
 }

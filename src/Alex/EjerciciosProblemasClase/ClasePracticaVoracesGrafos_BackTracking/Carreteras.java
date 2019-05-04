@@ -8,6 +8,7 @@ public class Carreteras {
     private static int islas;
     private static long carreteras;
     private static long coste;
+
     public static class Carretera implements Comparable{
         int origen;
         int destino;
@@ -90,12 +91,6 @@ public class Carreteras {
 
     }
 
-    private static void rellenarCola(PriorityQueue<Carretera> cola, int[][] matrizAdyacencia, int verticeOrigen, HashSet<Integer> vertices) {
-        for (int i = 1; i < matrizAdyacencia[verticeOrigen].length; i++) {
-            if (matrizAdyacencia[verticeOrigen][i] > 0 && !vertices.contains(i)) {
-                cola.offer(new Carretera(verticeOrigen, i, matrizAdyacencia[verticeOrigen][i]));
-            }
-        }
-    }
+
 
 }

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CicloHamiltoniano {
+    private static int sol;
     public static boolean isPromising(List<Integer>[] grafo, int[] solution, int elem, int lim) {
         int j = 0;
         boolean found = false;
@@ -49,6 +50,7 @@ public class CicloHamiltoniano {
                 if (k == solution.length-1) {
                     if (grafo[candidate].contains(solution[0])) {
                         printSolution(solution);
+                        sol++;
                     }
                 } else {
                     hamiltonian(grafo, solution, k+1);
@@ -81,5 +83,6 @@ public class CicloHamiltoniano {
         Arrays.fill(solution, -1);
         solution[0] = 0;
         hamiltonian(grafo, solution, 1);
+        System.out.println(sol);
     }
 }
