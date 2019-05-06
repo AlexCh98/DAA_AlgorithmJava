@@ -71,6 +71,7 @@ public class Mediana {
             //Lo hemos encontrado
             return pivote;
         }else{
+            //La mediana está en el conjunto de mayores. Ajustamos la posicion de la mediana relativamente en la lista de mayores
             return kElemento(indice - (menores.size() + iguales.size()),mayores);
         }
     }
