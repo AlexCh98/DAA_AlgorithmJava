@@ -101,6 +101,8 @@ public class NReinasMinMax {
     }
 
     public static void hacerProblema(int[][] tablero, int columna, Set<Integer> diagPos, Set<Integer> diagNeg, Set<Integer> filas, Solucion sol){
+
+        //Hemos rellenado todas las columnas
         if(columna == tablero.length){
             int max = calcularMaximo(sol.pos, tablero);
             int min = calcularMinimo(sol.pos, tablero);
@@ -122,18 +124,20 @@ public class NReinasMinMax {
             }
 
 
-        }else{
+        }else{ //Probamos a poner las reinas en todas las filas de esta columna
             for(int i=0; i<tablero.length; i++){
                 if(esFactible(columna, i, diagPos, diagNeg, filas)){
 
                     sol.pos[columna] = i;
 
+                    //Añadimos los valores de las diagonales y fila a la que pertenecen
                     diagPos.add(i-columna);
                     diagNeg.add(i+columna);
                     filas.add(i);
 
                     hacerProblema(tablero, columna+1, diagPos, diagNeg, filas, sol);
 
+                    //Las quitamos para que el bt funcione
                     diagPos.remove(i-columna);
                     diagNeg.remove(i+columna);
                     filas.remove(i);
