@@ -41,12 +41,12 @@ public class THANOS {
     }
 
     public static void hamiltoniano(int pos, List[]grafo, int[] camino){
-
         List<Integer> adj = new ArrayList<>();
         //Añadimos los adjuntos del planeta anterior
         adj.addAll(grafo[camino[pos-1]]);
 
         while(!adj.isEmpty()){
+
 
             //Cogemos el siguiente planeta
             int sig = adj.remove(0);

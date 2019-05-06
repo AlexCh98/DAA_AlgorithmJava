@@ -22,18 +22,8 @@ public class Mediana {
         listExamen.add(8);
         listExamen.add(7);
 
-        Set<Integer> menoresGeneral = new TreeSet<>(Comparator.comparing(integer -> -integer));
-        Set<Integer> mayoresGeneral = new TreeSet<>(Comparator.comparing(integer -> -integer));
-        Set<Integer> igualesGeneral = new TreeSet<>(Comparator.comparing(integer -> -integer));
-
-        int mediana = calcularMediana(list,(list.size()-1)/2, menoresGeneral, mayoresGeneral, igualesGeneral);
-        System.out.println("Mediana: "+mediana);
-        System.out.print("Menores: ");
-        imprimirLista(menoresGeneral);
-        System.out.print("Mayores: ");
-        imprimirLista(mayoresGeneral);
-        System.out.print("Iguales: ");
-        imprimirLista(igualesGeneral);
+        int mediana = calcularMediana(list,(list.size()-1)/2);
+        System.out.println(mediana);
     }
 
     public static void imprimirLista(Set<Integer> q){
@@ -43,7 +33,7 @@ public class Mediana {
         System.out.println();
     }
 
-    public static int calcularMediana(List<Integer>list, int k, Set<Integer> menoresGeneral, Set<Integer> mayoresGeneral, Set<Integer> igualesGeneral){
+    public static int calcularMediana(List<Integer>list, int k){
         List<Integer> menores = new ArrayList<>();
         List<Integer> mayores = new ArrayList<>();
         List<Integer> iguales = new ArrayList<>();
@@ -57,36 +47,19 @@ public class Mediana {
             System.out.print(num+", ");
             if(num < pivot){
                 menores.add(num);
-                menoresGeneral.add(num);
-                mayoresGeneral.remove(num);
 
             }else if(num > pivot){
                 mayores.add(num);
-                mayoresGeneral.add(num);
-                menoresGeneral.remove(num);
             }else{
                 iguales.add(num);
-                igualesGeneral.add(num);
             }
         }
-        System.out.println();
-        imprimirLista(menoresGeneral);
-        imprimirLista(mayoresGeneral);
-        imprimirLista(igualesGeneral);
-        System.out.println("------------------");
-
         if(menores.size() > k){
-            mayoresGeneral.add(pivot);
-            igualesGeneral.remove(pivot);
-            return calcularMediana(menores, k,menoresGeneral,mayoresGeneral,igualesGeneral);
+            return calcularMediana(menores, k);
         }else if(menores.size() + iguales.size() > k){
-            mayoresGeneral.remove(pivot);
-            menoresGeneral.remove(pivot);
             return pivot;
         }else{
-            igualesGeneral.remove(pivot);
-            menoresGeneral.add(pivot);
-            return calcularMediana(mayores, k- menores.size() - iguales.size(), menoresGeneral, mayoresGeneral, igualesGeneral);
+            return calcularMediana(mayores, k- menores.size() - iguales.size());
         }
     }
 }
