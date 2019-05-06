@@ -57,6 +57,7 @@ public class MinMaxHamiltoniano {
 
         while(it.hasNext()){
             Integer[] sig = (Integer[]) it.next();
+            //El ciclo empieza y termina en 0
             if(sig[0] == 0){
                 return true;
             }
