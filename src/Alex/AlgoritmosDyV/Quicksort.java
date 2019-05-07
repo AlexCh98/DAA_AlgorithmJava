@@ -11,8 +11,11 @@ public class Quicksort {
     public static void main(String[] Args) {
         int[] arr = //new int[]{1,2,4, 5, 8, 6, 4, 9};
         new int[]{1, 3, 2, 8, 5, 4, 6, 7, 9};
+        int[] vector = new int[]{2, 7, 4, 5, 1, 3};
         quicksort(arr, 0, arr.length - 1);
+        quicksort(vector, 0, vector.length - 1);
         System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(vector));
     }
 
     private static void quicksort(int[] array, int principio, int fin){

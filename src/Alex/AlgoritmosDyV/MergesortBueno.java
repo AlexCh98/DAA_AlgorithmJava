@@ -6,19 +6,20 @@ import java.util.Scanner;
 public class MergesortBueno {
 
     public static void main(String args[]){
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         int longArray = Integer.parseInt(scanner.nextLine());
         String[] linea = scanner.nextLine().split(" ");
         int[] arrayNumeros = new int[longArray];
         for(int i=0;i<linea.length;i++){
             arrayNumeros[i]=Integer.parseInt(linea[i]);
-        }
+        }*/
         //int vec[]={45,17,23,67,21};
         //System.out.println("Vector original");
         //imprimirVector(arrayNumeros);
         //System.out.println("\nVector ordenado");
-        ordenacionMergeSort(arrayNumeros);
-        imprimirVector(arrayNumeros);
+        int[] vector = new int[]{8,4,6,2,9,5};
+        ordenacionMergeSort(vector);
+        imprimirVector(vector);
     }
 
     public static void ordenacionMergeSort(int vec[]){
