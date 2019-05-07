@@ -11,7 +11,11 @@ public class MochilaContinua {
         double utilidad;
         double ratio;
 
-        public Objeto(String nombre,double peso,double utilidad) {
+        public void setPeso(double peso) {
+            this.peso = peso;
+        }
+
+        public Objeto(String nombre, double peso, double utilidad) {
             this.nombre = nombre;
             this.peso =peso;
             this.utilidad=utilidad;
@@ -25,15 +29,15 @@ public class MochilaContinua {
     }
 
     public static void main(String[] args) {
-        Objeto o1 = new Objeto("raton",1,1);
-        Objeto o2 = new Objeto("teclado",2,1);
-        Objeto o3 = new Objeto("ipad",2,3);
-        Objeto o4 = new Objeto("portatil",3,5);
-        Objeto o5 = new Objeto("mesa",15,6);
-        Objeto o6 = new Objeto("planta",4,1);
-        Objeto o7 = new Objeto("cargador",1,3);
-        Objeto o8 = new Objeto("papeles",5,5);
-        Objeto o9 = new Objeto("altavoz",8,9);
+        Objeto o1 = new Objeto("raton",1.42,1);
+        Objeto o2 = new Objeto("teclado",2.25,1);
+        Objeto o3 = new Objeto("ipad",2.9,3);
+        Objeto o4 = new Objeto("portatil",3.45,5);
+        Objeto o5 = new Objeto("mesa",15.23,6);
+        Objeto o6 = new Objeto("planta",4.14,1);
+        Objeto o7 = new Objeto("cargador",1.28,3);
+        Objeto o8 = new Objeto("papeles",5.52,5);
+        Objeto o9 = new Objeto("altavoz",8.34,9);
         List<Objeto> objetos = new ArrayList<>();
         objetos.add(o1);objetos.add(o2);objetos.add(o3);objetos.add(o4);
         objetos.add(o5);objetos.add(o6);objetos.add(o7);objetos.add(o8);
@@ -57,10 +61,12 @@ public class MochilaContinua {
         double pesoAux=0;
         while ((pesoAux<pesoMax)&&(!copiaObjs.isEmpty())){
             for (int i = 0; i <objetos.size() ; i++) {
-                if ((objetos.get(i).peso+pesoAux)<pesoMax){
-                    solucion.add(objetos.get(i));
-                    pesoAux=pesoAux+objetos.get(i).peso;
-                }copiaObjs.remove(i);
+                double falta =(pesoMax-pesoAux);
+                if ((copiaObjs.get(i).peso+pesoAux)<pesoMax){
+                    solucion.add(copiaObjs.get(i));
+                    pesoAux=pesoAux+copiaObjs.get(i).peso;
+                }
+                copiaObjs.remove(i);
             }
         }
     }
