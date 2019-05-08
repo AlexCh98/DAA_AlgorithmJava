@@ -1,15 +1,10 @@
+package Ivan.HechasPorMi.BackTracking.EjerciciosResumenes;
+
 import java.util.Arrays;
 
-public class MColoringProblem {
-    private static final int V = 10;
-
-    public static void main(String[] Args) {
-        /*int[][] grafo = new int[][]{//Grafo no diriguido con 4 nodos representado por matriz de adyacencia
-                {0, 1, 1, 1},
-                {1, 0, 1, 0},
-                {1, 1, 0, 1},
-                {1, 0, 1, 0},
-        };*/
+public class ColorearGrafos {
+    public static int V=5;
+    public static void main(String[] args) {
         int[][] grafo = new int[V][V];
         for (int i = 0; i < V; i++) {
             for (int j = i; j < V; j++) {
@@ -37,22 +32,26 @@ public class MColoringProblem {
         }
     }
 
-    private static boolean esBuena(int v, int[][] grafo, int c, int[] color) {
-        for (int i = 0; i < V; i++) {
-            if (grafo[v][i] == 1 && c == color[i]) return false;
+    private static boolean colorearGrafo(int[][] grafo, int[] color, int vertice, int numero_colores) {
+        if (vertice==V){
+            return true;
         }
-        return true;
+        for (int i = 0; i < numero_colores; i++) {
+            if(buena(vertice,grafo,i,color)){
+                color[vertice]=i;
+                if (colorearGrafo(grafo,color,vertice+1,numero_colores)){
+                    return true;
+                }
+            }color[vertice]=0;
+        }return false;
     }
 
-    private static boolean colorearGrafo(int[][] grafo, int[] color, int v, int m) {
-        if (v == V) return true;
-        for (int c = 1; c <= m; c++) {
-            if (esBuena(v, grafo, c, color)) {
-                color[v] = c;
-                if (colorearGrafo(grafo, color, v + 1, m)) return true;
-                color[v] = 0;
+    private static boolean buena(int vertice, int[][] grafo, int i, int[] color) {
+        for (int j = 0; j < V; j++) {
+            if ((grafo[vertice][j]==1)&&(i==color[j])){
+                return false;
             }
         }
-        return false;
+        return true;
     }
 }
