@@ -16,22 +16,22 @@ public class subVectoresSumaIgual {
         vector[3] = 4;
         vector[4] = 5;
         vector[5] = 9;
-        Set<Integer> subUno = new HashSet<>();
-        Set<Integer> subDos = new HashSet<>();
+        Stack<Integer> subUno = new Stack<>();
+        Stack<Integer> subDos = new Stack<>();
         partirEnDos(vector, 0, subUno, subDos);
 
     }
 
-    public static void partirEnDos(int[] v, int i, Set<Integer> subUno, Set<Integer> subDos){
+    public static void partirEnDos(int[] v, int i, Stack<Integer> subUno, Stack<Integer> subDos){
         if(i < v.length){
 
             subUno.add(i);
             partirEnDos(v, i+1, subUno, subDos);
-            subUno.remove(i);
+            subUno.pop();
 
             subDos.add(i);
             partirEnDos(v, i+1, subUno, subDos);
-            subDos.remove(i);
+            subDos.pop();
 
         }else if(i==v.length){
             //Calcular conjunto uno
