@@ -15,31 +15,88 @@ public class Mediana {
         vector.add(9);
         vector.add(8);
         vector.add(7);
-        int k=2;
+        int d=2;
         int indice = (vector.size()-1)/2; //En este caso la mediana
         int mediana = kElemento(indice, vector);
         System.out.println("Mediana: " + mediana);
 
-        System.out.println("2 más cercanos: ");
-        List<Integer> candidatos = new ArrayList<>();
-        for(int i=0; i<k; i++){
-            candidatos.add(kElemento(mediana-i,vector));
-            candidatos.add(kElemento(mediana+i,vector));
+        List<Integer> candidatosInf = new ArrayList<>();
+        List<Integer> candidatosSup = new ArrayList<>();
+        List<Integer> solucion = new ArrayList<>();
+
+        System.out.print("2 más cercanos: ");
+        for(int i=1; i<=d; i++){
+            candidatosInf.add(kElemento(indice-i,vector));
+            candidatosSup.add(kElemento(indice+i,vector));
         }
         //Me da mucha pereza compararlos
-        candidatos.clear();
+        int puntInf=0;
+        int puntSup=0;
 
-        System.out.println("2 más lejanos");
-        for(int i=0; i<k; i++){
-            candidatos.add(kElemento(mediana-i,vector));
-            candidatos.add(kElemento(mediana+i,vector));
+        while(puntInf<candidatosInf.size() && puntSup<candidatosSup.size() && solucion.size()<d){
+            int inf = candidatosInf.get(puntInf);
+            int sup = candidatosSup.get(puntSup);
+
+            if(mediana-inf <= sup-mediana){
+                solucion.add(inf);
+                puntInf++;
+            }else{
+                solucion.add(sup);
+                puntSup++;
+            }
         }
-        //Me da mucha más pereza compararlos
-        candidatos.clear();
 
-        System.out.println("Posiciones raras");
-        candidatos.add(kElemento(mediana-k/2,vector));
-        candidatos.add(kElemento(mediana+k/2,vector));
+        for(int s: solucion){
+            System.out.print(s+" ");
+        }
+        System.out.println();
+
+        candidatosInf.clear();
+        candidatosSup.clear();
+        solucion.clear();
+
+
+        System.out.print("2 más lejanos: ");
+        puntInf=0;
+        puntSup=0;
+
+        for(int i=0; i<d; i++){
+            candidatosInf.add(kElemento(i,vector));
+            candidatosSup.add(kElemento(vector.size()-1-i,vector));
+        }
+
+        while(puntInf<candidatosInf.size() && puntSup<candidatosSup.size() && solucion.size()<d){
+            int inf = candidatosInf.get(puntInf);
+            int sup = candidatosSup.get(puntSup);
+
+            if(mediana-inf >= sup-mediana){
+                solucion.add(inf);
+                puntInf++;
+            }else{
+                solucion.add(sup);
+                puntSup++;
+            }
+        }
+
+        for(int s: solucion){
+            System.out.print(s+" ");
+        }
+        System.out.println();
+
+        //Me da mucha más pereza compararlos
+        candidatosInf.clear();
+        candidatosSup.clear();
+        solucion.clear();
+
+        System.out.print("Posiciones raras: ");
+        solucion.add(kElemento(indice-d/2,vector));
+        solucion.add(kElemento(indice+d/2,vector));
+
+        for(int s: solucion){
+            System.out.print(s+" ");
+        }
+        System.out.println();
+
         //Estos ya salen directamente
     }
 
@@ -54,7 +111,7 @@ public class Mediana {
         for(int num: list){
             if(num < pivote){
                 menores.add(num);
-            }else if(num> pivote){
+            }else if(num > pivote){
                 mayores.add(num);
             }else{
                 iguales.add(num);
@@ -72,7 +129,7 @@ public class Mediana {
             return pivote;
         }else{
             //La mediana está en el conjunto de mayores. Ajustamos la posicion de la mediana relativamente en la lista de mayores
-            return kElemento(indice - (menores.size() + iguales.size()),mayores);
+            return kElemento(indice - menores.size() - iguales.size(),mayores);
         }
     }
 
