@@ -41,7 +41,8 @@ public class QuickSelect {
             }else if (num>pivote){
                 porEncimaPivote.add(num);
             }else{
-                igualPivote.add(num);}
+                igualPivote.add(num);
+            }
         }
         if (valor<porDebajoPivote.size()){
             resultado=quickSelect(porDebajoPivote,valor);}
