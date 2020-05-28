@@ -22,7 +22,7 @@ public class ColoreadoDeGrafos {
 
     public static void color(List<Integer>[] graph, int k, int m, int[] solution) {
         solution[k] = 0;
-        while (solution[k] != m) { //Mientras no se hayan comprobado los 3 colores
+        while (solution[k] != m) { //Mientras no se hayan comprobado los m colores
             solution[k]++;  //Pinto de un color
             if (isFeasible(graph, k, solution)) {
                 if (k < solution.length-1) {    //Si no se ha llegado al final
